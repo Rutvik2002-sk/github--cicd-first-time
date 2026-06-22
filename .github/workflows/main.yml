@@ -1,4 +1,4 @@
-name: Deploy Website To Ec2
+name: Deploy Website To EC2
 
 on:
   push:
