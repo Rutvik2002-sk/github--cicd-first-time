@@ -26,7 +26,7 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_PVT_KEY }}
           source: "dist/*"
-          target: "/temp/deploy"
+          target: "/home/temp/"
           
       - name: Copy files to html
         uses: appleboy/scp-action@v0.1.7
@@ -36,7 +36,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_PVT_KEY }}
           script: |
             sudo rm -rf /var/www/html/*
-            sudo cp -r /tmp/deploy/dist/* /var/www/html/
+            sudo cp -r /home/tmp/dist/* /var/www/html/
 
       - name: Restart Nginx
         uses: appleboy/ssh-action@v1.0.3
