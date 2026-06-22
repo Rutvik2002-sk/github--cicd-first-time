@@ -38,7 +38,7 @@ jobs:
             sudo rm -rf assets /var/www/html/
             sudo rm -rf index.html /var/www/html/
             sudo rm -rf vite.svg /var/www/html/
-            sudo cp -r /home/tmp/dist/* /var/www/html/
+            sudo cp -r /var/www/html/dist/* /var/www/html/
 
       - name: Restart Nginx
         uses: appleboy/ssh-action@v1.0.3
